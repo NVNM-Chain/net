@@ -13,6 +13,8 @@
 - **v1.2 Upgrade Countdown**: [Block Countdown](https://explorer.mantrachain.io/NVNM%20Mainnet/blocks/<UPGRADE_BLOCK>)
 - **v1.2 Release**: [Release Page](https://github.com/NVNM-Chain/nvnmchain/releases/tag/v1.2.0)
 - **v1.2 Bulk data (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data`
+- **v1.2 Bulk data archive (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export.zip`
+  (checksum: `.../nvnm-cite-mainnet-full-export-checksum.txt`) &nbsp;`<!-- filename is specific to this v1.2.0 release, do not assume it repeats -->`
 
 > **Reminder:** NVNM Chain is a Layer 2 consumer chain of MANTRA Chain (`mantra-1`).
 > Ensure your MANTRA Chain L1 provider node is healthy and running a compatible
@@ -73,13 +75,18 @@ mismatch aborts the upgrade before the block commits (no partial state).
 
 ## Step 1 — Obtain and stage the export
 
-The export is published (public, read-only) at:
+The export is published (public, read-only) as a single archive, plus its checksum:
 
 ```
-https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data
+https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export.zip
+https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export-checksum.txt
 ```
 
-It is a per-file mirror of this exact tree — copy it **as-is**, unmodified:
+> These two object names are specific to the **v1.2.0** export. Do not assume the
+> same filenames for future upgrades — always use the archive/checksum path
+> announced for that release's bulk data (see Overview above).
+
+Unzipped, the archive produces this exact tree — do not modify it:
 
 ```
 mainnet-full-export/
@@ -101,43 +108,45 @@ Stage the **entire directory** at this exact path under your node's home directo
 > `NVNMCHAIN_V1_2_EXPORT_DIR=/abs/path/to/mainnet-full-export` on the node process
 > instead — it overrides the default path entirely.
 
-### Download (manifest-driven, no credentials needed)
+### Download, verify checksum, and unzip (no credentials needed)
 
-The download is driven by `manifest.json` so it stays correct even as the file list
-changes. Run this on the node (VM) or inside the staging container (K8s):
+Run this on the node (VM) or inside the staging container (K8s). It fails closed on
+a checksum mismatch, so a truncated or corrupted download is caught here rather than
+at the upgrade height:
 
 ```bash
 set -euo pipefail
 BASE="https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data"
 DEST="${NVNMCHAIN_V1_2_EXPORT_DIR:-$HOME/.nvnmchain/upgrades/v1_2/mainnet-full-export}"
+TMP="$(mktemp -d)"
+
+wget -q -O "$TMP/export.zip"    "$BASE/nvnm-cite-mainnet-full-export.zip"
+wget -q -O "$TMP/export.sha256" "$BASE/nvnm-cite-mainnet-full-export-checksum.txt"
+
+EXPECTED_SHA=$(cut -d: -f2 "$TMP/export.sha256" | tr -d '[:space:]')
+ACTUAL_SHA=$(sha256sum "$TMP/export.zip" | awk '{print $1}')
+if [ "$EXPECTED_SHA" != "$ACTUAL_SHA" ]; then
+  echo "Checksum mismatch: expected $EXPECTED_SHA, got $ACTUAL_SHA" >&2
+  rm -rf "$TMP"
+  exit 1
+fi
+echo "Checksum verified."
 
 mkdir -p "$DEST"
-cd "$DEST"
-
-# Top-level files
-curl -fsSL "$BASE/manifest.json"    -o manifest.json
-curl -fsSL "$BASE/registries.json"  -o registries.json
-
-# Every tranche file listed in the manifest, into its relative path
-python3 - "$BASE" <<'EOF'
-import json, os, sys, subprocess
-base = sys.argv[1]
-manifest = json.load(open("manifest.json"))
-files = manifest["files"]
-for i, f in enumerate(files, 1):
-    rel = f["file"]
-    os.makedirs(os.path.dirname(rel), exist_ok=True)
-    subprocess.run(["curl", "-fsSL", f"{base}/{rel}", "-o", rel], check=True)
-    if i % 100 == 0 or i == len(files):
-        print(f"downloaded {i}/{len(files)}")
-EOF
+unzip -q "$TMP/export.zip" -d "$DEST"
+rm -rf "$TMP"
+echo "Export staged at $DEST"
 ```
 
 > On Kubernetes, run the same script as an **init container / one-shot Job** that
 > mounts the node's data PVC, writing into `.../upgrades/v1_2/mainnet-full-export/`.
 > Because the bucket is public and read-only, no object-storage credentials or
-> secrets are required. Do this for **every** node that will apply the upgrade
-> (validator, full/archive, and any sentries that also run the binary).
+> secrets are required — no AWS/R2 access keys, no `aws s3` calls, just `wget` +
+> `sha256sum` + `unzip`. All three are included in stock `busybox`/Alpine images,
+> so nothing needs to be installed at runtime — useful if your container runs as a
+> non-root user, since package managers (e.g. `apk add`) require root. Do this for
+> **every** node that will apply the upgrade (validator, full/archive, and any
+> sentries that also run the binary).
 
 ---
 
@@ -251,11 +260,12 @@ provider-neutral — use whatever operator/manifests your platform provides:
    scales with the full 11.94M record count — see requirements), and set pod
    requests/limits to match. Apply to **all** node roles that run the binary
    (validator, full/archive, sentries).
-3. **Stage the data onto the node's data volume.** Run the Step 1 download as an
-   **init container or one-shot Job** that mounts the same PVC as the node and
-   writes to `.../upgrades/v1_2/mainnet-full-export/` (or set
+3. **Stage the data onto the node's data volume.** Run the Step 1 download/verify/
+   unzip as an **init container or one-shot Job** that mounts the same PVC as the
+   node and writes to `.../upgrades/v1_2/mainnet-full-export/` (or set
    `NVNMCHAIN_V1_2_EXPORT_DIR`). No storage credentials needed — the bucket is
-   public. Then run the Step 2 verification (expect `checked 2114 files, 0 problems`).
+   public and the archive's checksum is verified before unzipping. Then run the
+   Step 2 verification (expect `checked 2114 files, 0 problems`).
 4. **Roll out the `v1.2.0` image** so the pod restarts on the new binary at the
    upgrade height (either via your operator's version/upgrade field, or by having
    Cosmovisor inside the container swap binaries as in Path A).
