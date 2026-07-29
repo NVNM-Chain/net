@@ -1,0 +1,2 @@
+https://evm.nvnmchain.io
+https://evm.nvnmchain.io/ws

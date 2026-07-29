@@ -1,0 +1,115 @@
+{
+  "chain_name": "nvnm-testnet-1",
+  "status": "live",
+  "network_type": "testnet",
+  "pretty_name": "NVNM Chain Testnet",
+  "chain_id": "nvnm-testnet-1",
+  "evm_chain_id": 787111,
+  "bech32_prefix": "nvnm",
+  "daemon_name": "nvnmchaind",
+  "node_home": "$HOME/.nvnmchain",
+  "chain_type": "l2-consumer",
+  "provider": {
+    "chain_id": "mantra-dukong-1",
+    "repo": "github.com/MANTRA-Chain/net/tree/main/mantra-dukong-1"
+  },
+  "codebase": {
+    "genesis": {
+      "genesis_url": "https://raw.githubusercontent.com/NVNM-Chain/net/main/nvnm-testnet-1/genesis.json"
+    },
+    "git_repo": "github.com/NVNM-Chain/nvnmchain",
+    "recommended_version": "v1.1.0",
+    "compatible_versions": [
+      "v1.1.0"
+    ],
+    "binaries": {
+      "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-amd64.tar.gz?checksum=sha256:f34150fce9fa48812fcef24b303e22c858b47fead4b1db71bf72bee8b53e8a03",
+      "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-arm64.tar.gz?checksum=sha256:0a75b027fd36ed3138431cbbc263b65f045f683983c80c184d39d9140f160e79",
+      "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-amd64.tar.gz?checksum=sha256:c1f232617027a0baffa8e577ccda26d88ddca72fa397e0595c6a9d9a714f0a68",
+      "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-arm64.tar.gz?checksum=sha256:9949167bfd72155160df329880ce75bbef8e9893e04ab5c14d774f04773e1cde"
+    }
+  },
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+        "base_gas_price": 40000000000
+      }
+    ]
+  },
+  "staking": {
+    "staking_tokens": [
+      {
+        "denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD"
+      }
+    ]
+  },
+  "peers": {
+    "seeds": [
+      {
+        "id": "593f1a50c4d58d33c7f4a75ef20a8329055c9164",
+        "address": "593f1a50c4d58d33c7f4a75ef20a8329055c9164@seed0.testnet.nvnmchain.io:26656"
+      }
+    ],
+    "persistent_peers": []
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc.testnet.nvnmchain.io:443",
+        "provider": "NVNM"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://api.testnet.nvnmchain.io:443",
+        "provider": "NVNM"
+      }
+    ],
+    "grpc": [
+      {
+        "address": "grpc.testnet.nvnmchain.io:443",
+        "provider": "NVNM"
+      }
+    ],
+    "evm-http-jsonrpc": [
+      {
+        "address": "https://evm.testnet.nvnmchain.io",
+        "provider": "NVNM"
+      }
+    ],
+    "evm-ws-jsonrpc": [
+      {
+        "address": "https://evm.testnet.nvnmchain.io/ws",
+        "provider": "NVNM"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "cosmos",
+      "url": "https://explorer.mantrachain.io/NVNM%20Testnet"
+    },
+    {
+      "kind": "evm",
+      "url": "https://explorer.evm.testnet.nvnmchain.io"
+    }
+  ],
+  "faucet": "https://faucet.testnet.nvnmchain.io",
+  "snapshots": {
+    "pruned_node": {
+      "goleveldb": {
+        "url": [
+          "https://snapshots.testnet.nvnmchain.io/nvnm-testnet-1_goleveldb_fullnode_latest.tar.lz4"
+        ]
+      }
+    },
+    "archive": {
+      "goleveldb": {
+        "url": [
+          "https://snapshots.testnet.nvnmchain.io/nvnm-testnet-1_goleveldb_archive_latest.tar.lz4"
+        ]
+      }
+    }
+  }
+}

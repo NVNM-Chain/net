@@ -1,0 +1,3 @@
+https://explorer.mantrachain.io/NVNM%20Testnet
+https://explorer.evm.testnet.nvnmchain.io
+https://faucet.testnet.nvnmchain.io

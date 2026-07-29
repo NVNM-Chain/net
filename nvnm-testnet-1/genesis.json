@@ -1,0 +1,471 @@
+{
+  "app_name": "nvnmchaind",
+  "app_version": "1.0.0-rc7",
+  "genesis_time": "2026-04-09T11:19:18.255312Z",
+  "chain_id": "nvnm-testnet-1",
+  "initial_height": 1,
+  "app_hash": null,
+  "app_state": {
+    "07-tendermint": null,
+    "anchoring": {
+      "params": {
+        "admin": "nvnm15m77x4pe6w9vtpuqm22qxu0ds7vn4ehzxt8qca"
+      },
+      "registries": {},
+      "records": [],
+      "roles": {},
+      "role_admins": {},
+      "role_members": {}
+    },
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "100",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "nvnm1k8m58fpke5a28u58k70efwdlakwgcrdzlfjlla",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "nvnm1k8m58fpke5a28u58k70efwdlakwgcrdzlfjlla",
+          "coins": []
+        }
+      ],
+      "supply": [],
+      "denom_metadata": [
+        {
+          "description": "The wrapped version of MantraUSD, which is the ERC20 token bridged from the provider chain and used as the gas token on the consumer chain.",
+          "denom_units": [
+            {
+              "denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+              "exponent": 0
+            },
+            {
+              "denom": "wmantrausd",
+              "exponent": 18
+            }
+          ],
+          "base": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+          "display": "wmantrausd",
+          "name": "transfer/channel-1/$WRAPPED_MANTRA_USD_DENOM IBC token",
+          "symbol": "wmantraUSD"
+        }
+      ],
+      "send_enabled": []
+    },
+    "ccvconsumer": {
+      "params": {
+        "enabled": true,
+        "blocks_per_distribution_transmission": "1000",
+        "distribution_transmission_channel": "",
+        "provider_fee_pool_addr_str": "",
+        "ccv_timeout_period": "2419200s",
+        "transfer_timeout_period": "1800s",
+        "consumer_redistribution_fraction": "0",
+        "historical_entries": "1000",
+        "unbonding_period": "691000s",
+        "soft_opt_out_threshold": "0",
+        "reward_denoms": [
+          "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD"
+        ],
+        "provider_reward_denoms": [],
+        "retry_delay_period": "3600s",
+        "consumer_id": "1"
+      },
+      "provider": {
+        "client_state": {
+          "chain_id": "mantra-dukong-1",
+          "trust_level": {
+            "numerator": "1",
+            "denominator": "3"
+          },
+          "trusting_period": "456192s",
+          "unbonding_period": "691200s",
+          "max_clock_drift": "10s",
+          "frozen_height": {
+            "revision_number": "0",
+            "revision_height": "0"
+          },
+          "latest_height": {
+            "revision_number": "1",
+            "revision_height": "13105861"
+          },
+          "proof_specs": [
+            {
+              "leaf_spec": {
+                "hash": "SHA256",
+                "prehash_key": "NO_HASH",
+                "prehash_value": "SHA256",
+                "length": "VAR_PROTO",
+                "prefix": "AA=="
+              },
+              "inner_spec": {
+                "child_order": [
+                  0,
+                  1
+                ],
+                "child_size": 33,
+                "min_prefix_length": 4,
+                "max_prefix_length": 12,
+                "empty_child": null,
+                "hash": "SHA256"
+              },
+              "max_depth": 0,
+              "min_depth": 0,
+              "prehash_key_before_comparison": false
+            },
+            {
+              "leaf_spec": {
+                "hash": "SHA256",
+                "prehash_key": "NO_HASH",
+                "prehash_value": "SHA256",
+                "length": "VAR_PROTO",
+                "prefix": "AA=="
+              },
+              "inner_spec": {
+                "child_order": [
+                  0,
+                  1
+                ],
+                "child_size": 32,
+                "min_prefix_length": 1,
+                "max_prefix_length": 1,
+                "empty_child": null,
+                "hash": "SHA256"
+              },
+              "max_depth": 0,
+              "min_depth": 0,
+              "prehash_key_before_comparison": false
+            }
+          ],
+          "upgrade_path": [
+            "upgrade",
+            "upgradedIBCState"
+          ],
+          "allow_update_after_expiry": false,
+          "allow_update_after_misbehaviour": false
+        },
+        "consensus_state": {
+          "timestamp": "2026-04-09T12:04:29.705696306Z",
+          "root": {
+            "hash": "oSm5v5cs/HPJkOA3Mwi4B5+ywN4mAfb0C6jg5uAIfFU="
+          },
+          "next_validators_hash": "DEFAB68784070863214F39C2A6FBEC64A3E2E67F9E1FB98ED530D4C8710AFD4B"
+        },
+        "initial_val_set": [
+          {
+            "pub_key": {
+              "ed25519": "qK5olU5AMFXAwnqRTKeLIhbWeZwxvCrCxAFhKQPpX4k="
+            },
+            "power": "13977016"
+          },
+          {
+            "pub_key": {
+              "ed25519": "Fb1OPrVg5pKmHFOCRnJekW4RR/ha8bWc6imUd3Oxni8="
+            },
+            "power": "6097478"
+          },
+          {
+            "pub_key": {
+              "ed25519": "0VGoaR/vDwxqAHfeOReL13B0XFWMvdKRGy+3ffxbTBk="
+            },
+            "power": "5162157"
+          },
+          {
+            "pub_key": {
+              "ed25519": "qcViymMSD4RBDGZGzaNhHXJ9Kfd38q4xQhLcxN4mrmI="
+            },
+            "power": "5152138"
+          }
+        ]
+      },
+      "new_chain": true,
+      "preCCV": false,
+      "connection_id": ""
+    },
+    "circuit": {
+      "account_permissions": [],
+      "disabled_type_urls": [
+        "/cosmos.staking.v1beta1.MsgCreateValidator",
+        "/cosmos.distribution.v1beta1.MsgDepositValidatorRewardsPool"
+      ]
+    },
+    "consensus": null,
+    "distribution": {
+      "params": {
+        "community_tax": "0.000000000000000000",
+        "base_proposer_reward": "0.000000000000000000",
+        "bonus_proposer_reward": "0.000000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "erc20": {
+      "params": {
+        "enable_erc20": true,
+        "permissionless_registration": true
+      },
+      "token_pairs": [],
+      "allowances": [],
+      "native_precompiles": [],
+      "dynamic_precompiles": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "evm": {
+      "accounts": [],
+      "params": {
+        "evm_denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+        "extra_eips": [],
+        "evm_channels": [],
+        "access_control": {
+          "create": {
+            "access_type": "ACCESS_TYPE_PERMISSIONLESS",
+            "access_control_list": []
+          },
+          "call": {
+            "access_type": "ACCESS_TYPE_PERMISSIONLESS",
+            "access_control_list": []
+          }
+        },
+        "active_static_precompiles": [
+          "0x0000000000000000000000000000000000000802",
+          "0x0000000000000000000000000000000000000805",
+          "0x0000000000000000000000000000000000000A00"
+        ],
+        "history_serve_window": "8192",
+        "extended_denom_options": {
+          "extended_denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD"
+        }
+      },
+      "preinstalls": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "feemarket": {
+      "params": {
+        "no_base_fee": false,
+        "base_fee_change_denominator": 8,
+        "elasticity_multiplier": 2,
+        "enable_height": "1",
+        "base_fee": "0",
+        "min_gas_price": "0.000000000000000000",
+        "min_gas_multiplier": "0.500000000000000000"
+      },
+      "block_gas": "0"
+    },
+    "genutil": {
+      "gen_txs": []
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": null,
+      "voting_params": null,
+      "tally_params": null,
+      "params": {
+        "min_deposit": [
+          {
+            "denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+            "amount": "88888000000000000000000"
+          }
+        ],
+        "max_deposit_period": "172800s",
+        "voting_period": "172800s",
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000",
+        "min_initial_deposit_ratio": "0.000000000000000000",
+        "proposal_cancel_ratio": "0.500000000000000000",
+        "proposal_cancel_dest": "",
+        "expedited_voting_period": "10800s",
+        "expedited_threshold": "0.667000000000000000",
+        "expedited_min_deposit": [
+          {
+            "denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+            "amount": "888888000000000000000000"
+          }
+        ],
+        "burn_vote_quorum": false,
+        "burn_proposal_deposit_prevote": false,
+        "burn_vote_veto": true,
+        "min_deposit_ratio": "0.010000000000000000"
+      },
+      "constitution": ""
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "*"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      },
+      "client_v2_genesis": {
+        "counterparty_infos": []
+      },
+      "channel_v2_genesis": {
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "async_packets": [],
+        "send_sequences": []
+      }
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.000000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+        "inflation_rate_change": "0.130000000000000000",
+        "inflation_max": "0.000000000000000000",
+        "inflation_min": "0.000000000000000000",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "6311520",
+        "max_supply": "0"
+      }
+    },
+    "nft": {
+      "classes": [],
+      "entries": []
+    },
+    "params": null,
+    "ratelimit": {
+      "params": {},
+      "rate_limits": [],
+      "whitelisted_address_pairs": [],
+      "blacklisted_denoms": [],
+      "pending_send_packet_sequence_numbers": [],
+      "hour_epoch": {
+        "epoch_number": "0",
+        "duration": "3600s",
+        "epoch_start_time": "0001-01-01T00:00:00Z",
+        "epoch_start_height": "1"
+      }
+    },
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "10000",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "691000s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "ibc/00E24F149F01782E2C423BDB114C98D6C657DFC583124389192187BF8DC3A1AD",
+        "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "tax": {
+      "params": {
+        "tax": "0.400000000000000000",
+        "tax_address": "nvnm14s9mkspymt0e65mr9y4pzpv29xl7n3lz7ku3gd",
+        "max_tax": "0.400000000000000000"
+      }
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denoms": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      },
+      "total_escrowed": []
+    },
+    "upgrade": {},
+    "vesting": {}
+  },
+  "consensus": {
+    "params": {
+      "block": {
+        "max_bytes": "3000000",
+        "max_gas": "300000000"
+      },
+      "evidence": {
+        "max_age_num_blocks": "100000",
+        "max_age_duration": "172800000000000",
+        "max_bytes": "1000000"
+      },
+      "validator": {
+        "pub_key_types": [
+          "ed25519"
+        ]
+      },
+      "version": {
+        "app": "0"
+      },
+      "abci": {
+        "vote_extensions_enable_height": "1"
+      }
+    }
+  }
+}

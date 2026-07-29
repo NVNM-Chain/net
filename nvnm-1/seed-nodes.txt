@@ -1,0 +1,3 @@
+5a95d8c5f453421ab272ef1178e3cb4c1f09930c@seed0.mainnet.nvnmchain.io:26656
+1a630e445f2a032aa15f00be4e14ae5f9e87d470@seed1.mainnet.nvnmchain.io:26656
+e2fe167d03e79fa98db2bd36247ba367c7bcdbb7@seed2.mainnet.nvnmchain.io:26656
