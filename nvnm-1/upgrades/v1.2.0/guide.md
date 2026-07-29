@@ -14,7 +14,7 @@
 - **v1.2 Release**: [Release Page](https://github.com/NVNM-Chain/nvnmchain/releases/tag/v1.2.0)
 - **v1.2 Bulk data (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data`
 - **v1.2 Bulk data archive (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export.zip`
-  (checksum: `.../nvnm-cite-mainnet-full-export-checksum.txt`) &nbsp;`<!-- filename is specific to this v1.2.0 release, do not assume it repeats -->`
+  (checksum: `.../nvnm-cite-mainnet-full-export-checksum.txt`)
 
 > **Reminder:** NVNM Chain is a Layer 2 consumer chain of MANTRA Chain (`mantra-1`).
 > Ensure your MANTRA Chain L1 provider node is healthy and running a compatible
@@ -132,8 +132,8 @@ if [ "$EXPECTED_SHA" != "$ACTUAL_SHA" ]; then
 fi
 echo "Checksum verified."
 
-mkdir -p "$DEST"
-unzip -q "$TMP/export.zip" -d "$DEST"
+rm -rf "$DEST"
+unzip -q -o "$TMP/export.zip" -d "$(dirname "$DEST")"
 rm -rf "$TMP"
 echo "Export staged at $DEST"
 ```
