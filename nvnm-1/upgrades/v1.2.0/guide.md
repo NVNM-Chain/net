@@ -133,6 +133,7 @@ fi
 echo "Checksum verified."
 
 rm -rf "$DEST"
+mkdir -p "$(dirname "$DEST")"
 unzip -q -o "$TMP/export.zip" -d "$(dirname "$DEST")"
 rm -rf "$TMP"
 echo "Export staged at $DEST"
