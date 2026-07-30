@@ -1,7 +1,7 @@
 # Mainnet Upgrade Guide: From Version v1.1 to v1.2 (`nvnm-1`)
 
 > **Upgrade type:** state-migration upgrade that bulk-loads the NVNM cite dataset
-> into the `anchoring` module. Every validator must stage ~460 MB of export data
+> into the `anchoring` module. Every **node** must stage ~460 MB of export data
 > on local disk **before** the upgrade height. Read this whole document first —
 > Steps 1–2 must be completed before the chain reaches the upgrade height; there
 > is no way to supply the data after the fact.
@@ -9,8 +9,8 @@
 ## Overview
 
 - **On-chain upgrade name**: `v1.2.0`
-- **v1.2 Upgrade Block Height**: `<UPGRADE_BLOCK>` &nbsp;`<!-- TBD: announced by the NVNM Chain team ahead of the cutover -->`
-- **v1.2 Upgrade Countdown**: [Block Countdown](https://explorer.mantrachain.io/NVNM%20Mainnet/blocks/<UPGRADE_BLOCK>)
+- **v1.2 Upgrade Block Height**: `2046500`
+- **v1.2 Upgrade Countdown**: [Block Countdown](https://evm.explorer.nvnmchain.io/block/countdown/2046500)
 - **v1.2 Release**: [Release Page](https://github.com/NVNM-Chain/nvnmchain/releases/tag/v1.2.0)
 - **v1.2 Bulk data (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data`
 - **v1.2 Bulk data archive (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export.zip`
