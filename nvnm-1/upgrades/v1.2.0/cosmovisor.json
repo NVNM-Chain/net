@@ -1,9 +1,8 @@
 {
-  "_comment": "PLACEHOLDER — v1.2.0 is not yet released. Regenerate this file once the release is cut, e.g. `python scripts/create_binaries_json/create_binaries_json.py --chain_id nvnm-1 --tag v1.2.0`, which fills in the real sha256 checksums from the release's sha256sum.txt. Until then the TODO checksums below are NOT valid and must not be used with cosmovisor auto-download.",
   "binaries": {
-    "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-amd64.tar.gz?checksum=sha256:TODO_REPLACE_ON_RELEASE",
-    "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-arm64.tar.gz?checksum=sha256:TODO_REPLACE_ON_RELEASE",
-    "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-amd64.tar.gz?checksum=sha256:TODO_REPLACE_ON_RELEASE",
-    "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-arm64.tar.gz?checksum=sha256:TODO_REPLACE_ON_RELEASE"
+    "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-amd64.tar.gz?checksum=sha256:51bfc3633bae5367764d6a165087c31214065598d60b2900b8f5167760ade9f6",
+    "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-arm64.tar.gz?checksum=sha256:17b90b31062156e64c77d9a2b04e6f3611b73da876b408331f36a92734729584",
+    "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-amd64.tar.gz?checksum=sha256:4c6b8ffdfc6bcb9764d899792fceab07e2a8436381baff9f95e763dcac5a4048",
+    "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-arm64.tar.gz?checksum=sha256:aa8bec5642bef3151450a6915fce65e2ba989aff698fdcaeaccf19c7d9ebd100"
   }
 }
