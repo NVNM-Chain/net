@@ -1,0 +1,8 @@
+{
+  "binaries": {
+    "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-amd64.tar.gz?checksum=sha256:2365f58b607d56ac514ce8a8cef0b6cc4decb68bccb117a92f7cdd25d8999411",
+    "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-linux-arm64.tar.gz?checksum=sha256:fc96b42abf2bc2fa985eeda216f9f564efcf110f349d610c3547d53e7fc9d914",
+    "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-amd64.tar.gz?checksum=sha256:d59a42ce572db879ab5fd1cb90c6a90e65556cb9bf4d9de370b559e7fffed292",
+    "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.2.0/nvnmchaind-1.2.0-darwin-arm64.tar.gz?checksum=sha256:fb8498afab950c9aafbcb69e3c0c007ec82e7a9b740e2f7924865893175319bd"
+  }
+}
