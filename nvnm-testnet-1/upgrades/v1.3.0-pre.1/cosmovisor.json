@@ -1,0 +1,8 @@
+{
+  "binaries": {
+    "linux/amd64": "https://pkg.nvnmchain.tech/nvnmchaind/v1.3.0-pre.1/nvnmchaind-1.3.0-pre.1-linux-amd64.tar.gz?checksum=sha256:729857503b23d5d69e095c30ab4d9b0763da0b77d01abdc74c25658b50c9ad85",
+    "linux/arm64": "https://pkg.nvnmchain.tech/nvnmchaind/v1.3.0-pre.1/nvnmchaind-1.3.0-pre.1-linux-arm64.tar.gz?checksum=sha256:eeb33f4d4a833dd9a0d2eba60ef961d7187a6f9e0d9bc6b1b483b87df55f297f",
+    "darwin/amd64": "https://pkg.nvnmchain.tech/nvnmchaind/v1.3.0-pre.1/nvnmchaind-1.3.0-pre.1-darwin-amd64.tar.gz?checksum=sha256:6c396d0a0bd674dcbd585085a22bd1382be86cf98acbad5b5807f9e291dd42ae",
+    "darwin/arm64": "https://pkg.nvnmchain.tech/nvnmchaind/v1.3.0-pre.1/nvnmchaind-1.3.0-pre.1-darwin-arm64.tar.gz?checksum=sha256:274d2f17e37a525e4c3b0103479d444e716f9c5b6871cfdab0b282f1efeaa6b9"
+  }
+}
