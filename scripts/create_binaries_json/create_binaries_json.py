@@ -2,20 +2,20 @@
 # This script is modified and based on the script in https://github.com/osmosis-labs/osmosis/blob/main/scripts/release/create_binaries_json/create_binaries_json.py
 Usage:
 This script generates a JSON object containing binary download URLs and their corresponding checksums
-for a given release tag of NVNM-Chain/nvnmchain or from a provided checksum URL.
+for a given release tag of NVNM-Chain/nvnmlayer2 or from a provided checksum URL.
 The binary JSON is compatible with cosmovisor and with the chain registry.
 
 You can run this script with the following commands:
 
-❯ python create_binaries_json.py --chain_id nvnm-1 --checksums_url https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/sha256sum.txt
+❯ python create_binaries_json.py --chain_id nvnm-1 --checksums_url https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/sha256sum.txt
 
 Output:
 {
   "binaries": {
-    "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-amd64.tar.gz?checksum=<checksum>",
-    "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-arm64.tar.gz?checksum=<checksum>",
-    "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-amd64.tar.gz?checksum=<checksum>",
-    "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-arm64.tar.gz?checksum=<checksum>"
+    "linux/amd64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-amd64.tar.gz?checksum=<checksum>",
+    "linux/arm64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-arm64.tar.gz?checksum=<checksum>",
+    "darwin/amd64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-amd64.tar.gz?checksum=<checksum>",
+    "darwin/arm64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-arm64.tar.gz?checksum=<checksum>"
   }
 }
 
@@ -30,12 +30,12 @@ Example:
 6c310a2bec0ce599d2f0605c77e40869987bc92f5768999ea6896fd5ae57c547  nvnmchaind-1.1.0-linux-amd64
 f34150fce9fa48812fcef24b303e22c858b47fead4b1db71bf72bee8b53e8a03  nvnmchaind-1.1.0-linux-amd64.tar.gz
 
-(From: https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/sha256sum.txt)
+(From: https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/sha256sum.txt)
 
 ❯ python create_binaries_json.py --chain_id nvnm-1 --tag v1.1.0
 
 Expect a checksum to be present at:
-https://github.com/NVNM-Chain/nvnmchain/releases/download/<TAG>/sha256sum.txt
+https://github.com/NVNM-Chain/nvnmlayer2/releases/download/<TAG>/sha256sum.txt
 """
 
 import requests
@@ -93,7 +93,7 @@ def checksums_to_binaries_json(checksums):
             # exclude universal binaries and windows binaries
             if arch == 'all' or platform == 'windows':
                 continue
-            binaries[f"{platform}/{arch}"] = f"https://github.com/NVNM-Chain/nvnmchain/releases/download/v{tag}/{filename}?checksum=sha256:{checksum}"
+            binaries[f"{platform}/{arch}"] = f"https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v{tag}/{filename}?checksum=sha256:{checksum}"
 
     if not binaries:
         print("Error: No binaries found in the checksum file")
@@ -142,7 +142,7 @@ def main():
         parser.error("Either --tag or --upgrade_version must be provided to determine the output directory.")
         sys.exit(1)
 
-    checksums_url = checksums_url if checksums_url else f"https://github.com/NVNM-Chain/nvnmchain/releases/download/{tag}/sha256sum.txt"
+    checksums_url = checksums_url if checksums_url else f"https://github.com/NVNM-Chain/nvnmlayer2/releases/download/{tag}/sha256sum.txt"
     checksums = download_checksums(checksums_url)
     binaries_json = checksums_to_binaries_json(checksums)
     print(binaries_json)

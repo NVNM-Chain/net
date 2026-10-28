@@ -17,16 +17,16 @@
     "genesis": {
       "genesis_url": "https://raw.githubusercontent.com/NVNM-Chain/net/main/nvnm-testnet-1/genesis.json"
     },
-    "git_repo": "github.com/NVNM-Chain/nvnmchain",
+    "git_repo": "github.com/NVNM-Chain/nvnmlayer2",
     "recommended_version": "v1.1.0",
     "compatible_versions": [
       "v1.1.0"
     ],
     "binaries": {
-      "linux/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-amd64.tar.gz?checksum=sha256:f34150fce9fa48812fcef24b303e22c858b47fead4b1db71bf72bee8b53e8a03",
-      "linux/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-arm64.tar.gz?checksum=sha256:0a75b027fd36ed3138431cbbc263b65f045f683983c80c184d39d9140f160e79",
-      "darwin/amd64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-amd64.tar.gz?checksum=sha256:c1f232617027a0baffa8e577ccda26d88ddca72fa397e0595c6a9d9a714f0a68",
-      "darwin/arm64": "https://github.com/NVNM-Chain/nvnmchain/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-arm64.tar.gz?checksum=sha256:9949167bfd72155160df329880ce75bbef8e9893e04ab5c14d774f04773e1cde"
+      "linux/amd64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-amd64.tar.gz?checksum=sha256:f34150fce9fa48812fcef24b303e22c858b47fead4b1db71bf72bee8b53e8a03",
+      "linux/arm64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-linux-arm64.tar.gz?checksum=sha256:0a75b027fd36ed3138431cbbc263b65f045f683983c80c184d39d9140f160e79",
+      "darwin/amd64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-amd64.tar.gz?checksum=sha256:c1f232617027a0baffa8e577ccda26d88ddca72fa397e0595c6a9d9a714f0a68",
+      "darwin/arm64": "https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v1.1.0/nvnmchaind-1.1.0-darwin-arm64.tar.gz?checksum=sha256:9949167bfd72155160df329880ce75bbef8e9893e04ab5c14d774f04773e1cde"
     }
   },
   "fees": {
