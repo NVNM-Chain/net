@@ -15,7 +15,7 @@ Each directory includes, at a minimum:
 
 | File                | Description                                                                                              |
 | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| `version.txt`       | The [nvnmchain](//github.com/NVNM-Chain/nvnmchain/releases) version used to participate in the network.  |
+| `version.txt`       | The [nvnmchain](//github.com/NVNM-Chain/nvnmlayer2/releases) version used to participate in the network.  |
 | `chain-id.txt`      | The "chain-id" of the network.                                                                           |
 | `genesis.json`      | The genesis file for the network.                                                                        |
 | `seed-nodes.txt`    | A list of seed node addresses for the network.                                                           |
@@ -33,7 +33,7 @@ Each directory includes, at a minimum:
 ## Usage
 
 The information in this repo may be used to automate tasks when deploying or configuring
-[nvnmchain](//github.com/NVNM-Chain/nvnmchain) software.
+[nvnmchain](//github.com/NVNM-Chain/nvnmlayer2) software.
 
 The format is standardized across the networks so that you can use the same method
 to fetch the information for all of them - just change the base URL

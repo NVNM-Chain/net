@@ -5,8 +5,8 @@
 - **$UPGRADE_VERSION Proposal**: [Proposal Page](https://explorer.mantrachain.io/$EXPLORER_NETWORK/proposals/$PROPOSAL_ID)
 - **$UPGRADE_VERSION Upgrade Block Height**: $UPGRADE_BLOCK
 - **$UPGRADE_VERSION Upgrade Countdown**: [Block Countdown](https://explorer.mantrachain.io/$EXPLORER_NETWORK/blocks/$UPGRADE_BLOCK)
-- **$UPGRADE_VERSION Release**: [Release Page](https://github.com/NVNM-Chain/nvnmchain/releases/tag/v$UPGRADE_TAG_NUM)
-- **$UPGRADE_VERSION Docker Image**: [ghcr.io/nvnm-chain/nvnmchain:v$UPGRADE_TAG_NUM](https://github.com/nvnm-chain/nvnmchain/pkgs/container/nvnmchain)
+- **$UPGRADE_VERSION Release**: [Release Page](https://github.com/NVNM-Chain/nvnmlayer2/releases/tag/v$UPGRADE_TAG_NUM)
+- **$UPGRADE_VERSION Docker Image**: [ghcr.io/nvnm-chain/nvnmlayer2:v$UPGRADE_TAG_NUM](https://github.com/nvnm-chain/nvnmlayer2/pkgs/container/nvnmlayer2)
 
 > **Reminder:** NVNM Chain is a Layer 2 consumer chain. Before upgrading the L2
 > `nvnmchaind` binary, ensure your MANTRA Chain L1 provider node is healthy and
@@ -91,7 +91,7 @@ upgrade_name="$UPGRADE_VERSION"
 mkdir -p ~/.nvnmchain/cosmovisor/upgrades/$upgrade_name/bin
 if [[ $(uname -m) == 'arm64' ]] || [[ $(uname -m) == 'aarch64' ]]; then export ARCH="arm64"; else export ARCH="amd64"; fi
 if [[ $(uname) == 'Darwin' ]]; then export OS="darwin"; else export OS="linux"; fi
-wget https://github.com/NVNM-Chain/nvnmchain/releases/download/v$upgrade_version/nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz
+wget https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v$upgrade_version/nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz
 tar -xvf nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz -C ~/.nvnmchain/cosmovisor/upgrades/$upgrade_name/bin
 rm nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz
 ```
@@ -128,7 +128,7 @@ upgrade_version="$UPGRADE_TAG_NUM"
 upgrade_name="$UPGRADE_VERSION"
 if [[ $(uname -m) == 'arm64' ]] || [[ $(uname -m) == 'aarch64' ]]; then export ARCH="arm64"; else export ARCH="amd64"; fi
 if [[ $(uname) == 'Darwin' ]]; then export OS="darwin"; else export OS="linux"; fi
-wget https://github.com/NVNM-Chain/nvnmchain/releases/download/v$upgrade_version/nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz
+wget https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v$upgrade_version/nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz
 tar -xvf nvnmchaind-$upgrade_version-$OS-$ARCH.tar.gz -C $GOPATH/bin
 ```
 

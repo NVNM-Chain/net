@@ -11,7 +11,7 @@
 - **On-chain upgrade name**: `v1.2.0`
 - **v1.2 Upgrade Block Height**: `2046500`
 - **v1.2 Upgrade Countdown**: [Block Countdown](https://evm.explorer.nvnmchain.io/block/countdown/2046500)
-- **v1.2 Release**: [Release Page](https://github.com/NVNM-Chain/nvnmchain/releases/tag/v1.2.0)
+- **v1.2 Release**: [Release Page](https://github.com/NVNM-Chain/nvnmlayer2/releases/tag/v1.2.0)
 - **v1.2 Bulk data (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data`
 - **v1.2 Bulk data archive (public)**: `https://nvnmchain-ops-data.nvnmchain.tech/mainnet-bulk-data/nvnm-cite-mainnet-full-export.zip`
   (checksum: `.../nvnm-cite-mainnet-full-export-checksum.txt`)
@@ -233,7 +233,7 @@ UPGRADE_VERSION="1.2.0"    # release tag without the leading v
 mkdir -p ~/.nvnmchain/cosmovisor/upgrades/$UPGRADE_NAME/bin
 if [[ $(uname -m) == 'arm64' || $(uname -m) == 'aarch64' ]]; then ARCH=arm64; else ARCH=amd64; fi
 if [[ $(uname) == 'Darwin' ]]; then OS=darwin; else OS=linux; fi
-wget https://github.com/NVNM-Chain/nvnmchain/releases/download/v$UPGRADE_VERSION/nvnmchaind-$UPGRADE_VERSION-$OS-$ARCH.tar.gz
+wget https://github.com/NVNM-Chain/nvnmlayer2/releases/download/v$UPGRADE_VERSION/nvnmchaind-$UPGRADE_VERSION-$OS-$ARCH.tar.gz
 tar -xvf nvnmchaind-$UPGRADE_VERSION-$OS-$ARCH.tar.gz -C ~/.nvnmchain/cosmovisor/upgrades/$UPGRADE_NAME/bin
 rm nvnmchaind-$UPGRADE_VERSION-$OS-$ARCH.tar.gz
 ```
@@ -363,5 +363,5 @@ so use keyed/offset-paged `records()` reads.
 ## Additional resources
 
 - Docs: <https://docs.nvnmchain.io>
-- Binary releases: <https://github.com/NVNM-Chain/nvnmchain/releases>
-- Upstream operator runbook: [`app/upgrades/v1_2/UPGRADE_RUNBOOK.md`](https://github.com/NVNM-Chain/nvnmchain/blob/main/app/upgrades/v1_2/UPGRADE_RUNBOOK.md)
+- Binary releases: <https://github.com/NVNM-Chain/nvnmlayer2/releases>
+- Upstream operator runbook: [`app/upgrades/v1_2/UPGRADE_RUNBOOK.md`](https://github.com/NVNM-Chain/nvnmlayer2/blob/main/app/upgrades/v1_2/UPGRADE_RUNBOOK.md)
